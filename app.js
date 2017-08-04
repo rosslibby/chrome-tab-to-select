@@ -32,7 +32,11 @@ window.onkeydown = e => {
             highlight(results)
             break
         case 13:
-            results.children[this.state.current].children[0].firstChild.firstChild.firstChild.click()
+            results.children[
+                this.state.current === -1
+                    ? 0
+                    : this.state.current
+            ].children[0].firstChild.firstChild.firstChild.click()
             break
         default:
             break
